@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The SAMĀ Festival ⸻ A Lighthouse for Music, Art &amp; Culture · Zanzibar</title>
+<meta name="description" content="SAMĀ is a lighthouse for music, art, and culture — a celebration of the five continents beneath the stars of the Spice Island. Drumming circles, live music, dance, storytelling and ancestral traditions on the Zanzibar shore." />
+<meta name="robots" content="noindex,nofollow" />
+<!-- gate runs before paint to avoid any flash of protected content -->
+<script>
+  (function () {
+    try {
+      if (sessionStorage.getItem("sama_ok") === "1") {
+        document.documentElement.classList.add("unlocked");
+      }
+    } catch (e) {}
+  })();
+</script>
+<meta name="theme-color" content="#0c3b3a" />
+<meta property="og:title" content="The SAMĀ Festival · Zanzibar" />
+<meta property="og:description" content="A Lighthouse for Music, Art, and Culture — beneath the stars of the Spice Island." />
+<meta property="og:image" content="img/hero-poster.jpg" />
+<meta property="og:type" content="website" />
+<link rel="icon" href="img/favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===== Password gate (client-side; casual protection only) ===== -->
+<div id="gate" class="gate" role="dialog" aria-modal="true" aria-label="Enter password">
+  <div class="gate-inner">
+    <img src="img/logo.png" alt="SAMĀ" class="gate-mark" />
+    <p class="gate-eyebrow">The SAMĀ Festival · Zanzibar</p>
+    <h1 class="gate-title">A private preview</h1>
+    <p class="gate-text">This page is shared for preview only. Enter the password to continue.</p>
+    <form id="gateForm" class="gate-form" autocomplete="off">
+      <input id="gatePass" type="password" placeholder="Password" aria-label="Password" autocomplete="off" />
+      <button type="submit">Enter</button>
+    </form>
+    <p id="gateErr" class="gate-err" hidden>That password isn't right — try again.</p>
+  </div>
+</div>
+
+<!-- ===== Decorative SVG defs (dhow sail / wave) ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="brass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4b942"/><stop offset="1" stop-color="#b5532a"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<!-- ===== Header ===== -->
+<header class="site-header" id="top">
+  <a class="brand" href="#top" aria-label="SAMĀ home">
+    <img src="img/logo.png" alt="SAMĀ" class="brand-mark" />
+    <span class="brand-word">SAM<span class="macron">Ā</span></span>
+  </a>
+  <nav class="nav" id="nav">
+    <a href="#lineup">Line-up</a>
+    <a href="#watch">Watch</a>
+    <a href="#artists">Artists</a>
+    <a href="#workshop">Workshop</a>
+    <a href="#about">About</a>
+    <a href="#join" class="nav-cta">Join the circle</a>
+  </nav>
+  <div class="header-right">
+    <a class="icon-link" href="https://www.instagram.com/thesamafestival" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="hero">
+  <video class="hero-video" autoplay muted loop playsinline poster="img/hero-poster.jpg">
+    <source src="video/hero-bg-2.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-veil"></div>
+  <div class="hero-inner">
+    <p class="eyebrow reveal">Beneath the stars of the Spice Island · Zanzibar</p>
+    <h1 class="hero-title reveal">A Lighthouse for<br/>Music, Art &amp; Culture</h1>
+    <p class="hero-sub reveal">We bridge the ancient and the modern to create transformative, visionary, and connected experiences.</p>
+    <div class="hero-actions reveal">
+      <a class="btn btn-solid" href="#lineup">See the line-up</a>
+      <a class="btn btn-ghost" href="#join">Stay updated</a>
+    </div>
+  </div>
+  <a href="#intro" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+  <!-- dhow sails drifting -->
+  <svg class="dhow dhow-1" viewBox="0 0 120 140" aria-hidden="true"><path d="M60 4 L60 116 L8 116 Z" fill="rgba(244,185,66,.16)"/><path d="M64 30 L108 116 L64 116 Z" fill="rgba(244,185,66,.10)"/><rect x="58" y="4" width="3" height="118" fill="rgba(244,185,66,.3)"/><path d="M0 124 q60 18 120 0" stroke="rgba(255,255,255,.25)" fill="none" stroke-width="2"/></svg>
+</section>
+
+<!-- wave divider -->
+<div class="wave-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,40 C240,90 480,0 720,30 C960,60 1200,95 1440,45 L1440,90 L0,90 Z"/></svg>
+</div>
+
+<!-- ===== Intro / mission band ===== -->
+<section class="intro" id="intro">
+  <div class="intro-inner reveal">
+    <span class="sigil">🜃</span>
+    <h2 class="serif-xl">A celebration of the five continents — where ancient rhythms, live sound, and immersive technology blend into a living tapestry beneath the stars.</h2>
+    <ul class="ribbon">
+      <li>Drumming circles</li><li>Live music</li><li>Dance workshops</li>
+      <li>Storytelling</li><li>Ancestral traditions</li><li>Art installations</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== Line-up ===== -->
+<section class="lineup" id="lineup">
+  <div class="section-head reveal">
+    <p class="kicker">Line-up <span class="sigil">🜃</span> Artists</p>
+    <h2 class="serif-xl">Three voyages of sound</h2>
+  </div>
+
+  <article class="act reveal">
+    <div class="act-media"><img src="img/kumar-screenshot.png" alt="Afrosideral performing" loading="lazy" /></div>
+    <div class="act-body">
+      <span class="act-tag">Live Set</span>
+      <h3 class="act-title">Afrosideral</h3>
+      <p>A Cuban artist with a magnetic presence, Afrosideral blends Afro-Cuban folklore, ethnic instruments, and live electronic rhythms to create a mystical, ecstatic journey of self exploration through music and movement. A natural improviser, a mystical and ceremonial aura takes over the space when he performs. As a messenger of his ancestors, his verses carry their strength, inviting introspection and elevating energy on a journey of no return.</p>
+    </div>
+  </article>
+
+  <article class="act act-rev reveal">
+    <div class="act-media"><img src="img/wshb8226.jpg" alt="Âpe Chimba in concert with a frame drum" loading="lazy" /></div>
+    <div class="act-body">
+      <span class="act-tag">Live Concert</span>
+      <h3 class="act-title">Âpe Chimba</h3>
+      <p>Captivating and mystifying. Conjuring both deep self-reflection and liberating ecstatic dance. Âpe's music echoes the eternal in all of us, expressing the rawest of human emotion and leading to the doors of sacred celebration. The concert will last for approx. three hours — yet the party continues through the night.</p>
+    </div>
+  </article>
+
+  <article class="act reveal">
+    <div class="act-media"><img src="img/ape-cova-santa.jpg" alt="SAMĀ crowd and stage under neon light" loading="lazy" /></div>
+    <div class="act-body">
+      <span class="act-tag">Hybrid DJ Set</span>
+      <h3 class="act-title">AWO</h3>
+      <p>The celebration continues into the early hours. Âpe Chimba's DJ sets are a transcendent fusion of Afro-electronic music, weaving traditional African rhythms with cutting-edge electronic elements — a vibrant interplay of ancestral heritage and modern innovation that bridges the primal and the futuristic. The tempo ranges between 115–130 BPM, balancing danceable energy and trance, drawing on house, techno, and amapiano while infusing the soundscape with field recordings — nature sounds and ambient textures that heighten the senses.</p>
+    </div>
+  </article>
+</section>
+
+<!-- ===== Watch ===== -->
+<section class="watch" id="watch">
+  <div class="watch-bg" aria-hidden="true"></div>
+  <div class="section-head light reveal">
+    <p class="kicker">Watch</p>
+    <h2 class="serif-xl">Filho do Mar — sons of the sea</h2>
+    <p class="lede">Two renderings of one prayer to the ocean, from Afrosideral &amp; Raíces Profundas.</p>
+  </div>
+  <div class="video-grid">
+    <figure class="video-card reveal">
+      <video controls preload="none" poster="img/poster-live.jpg" playsinline>
+        <source data-src="video/afrosideral-live-web.mp4" type="video/mp4" />
+      </video>
+      <figcaption>Filho do Mar — Live</figcaption>
+    </figure>
+    <figure class="video-card reveal">
+      <video controls preload="none" poster="img/poster-remix.jpg" playsinline>
+        <source data-src="video/afrosideral-remix-web.mp4" type="video/mp4" />
+      </video>
+      <figcaption>Filho do Mar — Remix by BJDC</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===== Artists / Bio ===== -->
+<section class="artists" id="artists">
+  <div class="section-head reveal">
+    <p class="kicker">Bio</p>
+    <h2 class="serif-xl">Three threads, woven as one</h2>
+    <p class="lede">Threads of music. Threads of soul. Threads telling stories both ancient and new — sound sewing a tapestry of devotional melody and rhythm in our hearts.</p>
+    <ul class="meta-row">
+      <li><span>Hometown</span> Ibiza · Bali · Cuba</li>
+      <li><span>Influences</span> Native world roots</li>
+    </ul>
+  </div>
+
+  <div class="bio-grid">
+    <article class="bio reveal">
+      <div class="bio-photo"><img src="img/wshb8299.jpg" alt="Âpe Chimba" loading="lazy" /></div>
+      <h3>Âpe Chimba</h3>
+      <p class="bio-role">Musician · Singer · Composer · Producer</p>
+      <p>A multi-instrumental musician, singer, composer and producer whose music resonates across borders and times, blending the primal with the divine. He draws on old African music, Flamenco, Latin, Ancient Arabian, Indigenous folk song, and world electronica. Âpe is not merely a musician; he is a storyteller of the soul, a nomad of sound traversing the landscapes of consciousness. His live performances are more than concerts — they are pilgrimages.</p>
+    </article>
+
+    <article class="bio reveal">
+      <div class="bio-photo"><img src="img/pablo-bcn.jpg" alt="Pablo Vicencio" loading="lazy" /></div>
+      <h3>Pablo Vicencio</h3>
+      <p class="bio-role">Producer · Multi-percussionist</p>
+      <p>A visionary producer and multi-percussionist celebrated for his global pursuit of groundbreaking sounds that bridge ancient traditions with contemporary innovation. He has produced, played and toured with Huaira, Âpe Chimba, Lauryn Hill, Jungle Kitchen, Lumina, Ayotemi and Facesoul. Pablo is Music Director and a founder of the Labyrinth Collective, where world music meets the electronic scene in immersive auditory experiences that redefine live performance and studio production alike.</p>
+    </article>
+
+    <article class="bio reveal">
+      <div class="bio-photo"><img src="img/kumar-screenshot.png" alt="Kumar Sublevao-Beat" loading="lazy" /></div>
+      <h3>Kumar Sublevao-Beat</h3>
+      <p class="bio-role">Afro-Cuban Electronic · Rapper · Composer</p>
+      <p>Rapper, multi-instrumentalist, composer and producer from Cuba, now based in Europe with over 20 years of international experience. A natural improviser, a mystical and ceremonial aura takes over the stage when he performs — he dances as if possessed by the drums, carrying the audience from meditative states to trance. His verses carry the strength of a maroon. Charismatic, avant-garde and versatile, he is influenced by Hip-hop, Jazz, Experimental Music and Tropical Electronica, all under the umbrella of Afro music.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ===== Workshop ===== -->
+<section class="workshop" id="workshop">
+  <div class="workshop-inner reveal">
+    <div class="workshop-text">
+      <p class="kicker">Workshop</p>
+      <h2 class="serif-xl">Afrosideral's Orishas Movements</h2>
+      <p class="lede">A guided journey through the movements of the Orishas — ancestral gesture, breath and rhythm. Read the workshop guide before you arrive.</p>
+      <a class="btn btn-solid" href="assets/orisha-movements.pdf" target="_blank" rel="noopener">Read the guide (PDF)</a>
+    </div>
+    <div class="workshop-art" aria-hidden="true">
+      <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="78" fill="none" stroke="url(#brass)" stroke-width="1.5"/><circle cx="100" cy="100" r="54" fill="none" stroke="url(#brass)" stroke-width="1.5"/><path d="M100 22 L139 100 L100 178 L61 100 Z" fill="none" stroke="url(#brass)" stroke-width="1.5"/><path d="M22 100 L100 61 L178 100 L100 139 Z" fill="none" stroke="url(#brass)" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- wave divider -->
+<div class="wave-divider flip" aria-hidden="true">
+  <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,40 C240,90 480,0 720,30 C960,60 1200,95 1440,45 L1440,90 L0,90 Z"/></svg>
+</div>
+
+<!-- ===== About ===== -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-mark reveal"><img src="img/logo.png" alt="SAMĀ" /></div>
+    <h2 class="serif-xl reveal">SAM<span class="macron">Ā</span> — a lighthouse for music, art, and culture.</h2>
+    <div class="about-cols">
+      <p class="reveal">We create transformative experiences that serve as bridges between ancient legacies and modern expressions. As part of this vision we intentionally weave contemporary world musicians and visionary artists into the tapestry of the gathering — creators crafting radical, genre-defying sounds — honoring the cultural heritages of the five continents and blending timeless traditions with innovative artistry.</p>
+      <p class="reveal">Our mission is rooted in the belief that the wisdom of the past holds the power to guide us toward a more connected, creative, and conscious future. These collaborations are about co-creating new experiences that are contextually relevant, and rooted in both ancestral memory and future possibility.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Join / Contact ===== -->
+<section class="join" id="join">
+  <div class="join-inner reveal">
+    <p class="kicker light">Join the circle</p>
+    <h2 class="serif-xl">Find us on the shore</h2>
+    <p class="lede">Stay close to the gathering — join our WhatsApp circle for the latest on the line-up, workshops and the next tide.</p>
+    <div class="join-actions">
+      <a class="btn btn-solid" href="https://chat.whatsapp.com/FkMYXsFFw8iJtNRHsbFLrj" target="_blank" rel="noopener">Join the WhatsApp circle</a>
+      <a class="btn btn-ghost light" href="https://wa.me/971545173334" target="_blank" rel="noopener">Message +971 54 517 3334</a>
+    </div>
+    <a class="ig-line" href="https://www.instagram.com/thesamafestival" target="_blank" rel="noopener">@thesamafestival</a>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <img src="img/logo.png" alt="SAMĀ" />
+      <p>A Lighthouse for Music, Art &amp; Culture.<br/>Beneath the stars of the Spice Island.</p>
+    </div>
+    <nav class="foot-nav">
+      <a href="#lineup">Line-up</a>
+      <a href="#watch">Watch</a>
+      <a href="#artists">Artists</a>
+      <a href="#workshop">Workshop</a>
+      <a href="#about">About</a>
+    </nav>
+    <div class="foot-social">
+      <a href="https://www.instagram.com/thesamafestival" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://chat.whatsapp.com/FkMYXsFFw8iJtNRHsbFLrj" target="_blank" rel="noopener">WhatsApp circle</a>
+    </div>
+  </div>
+  <div class="foot-base">
+    <span>© <span id="year"></span> The SAMĀ Festival</span>
+    <span>Performance photography by Waleed Shah</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
