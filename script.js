@@ -60,18 +60,57 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  /* --- mobile menu --- */
-  const closeMenu = () => {
+  /* --- mobile menu (with position-preserving scroll lock) --- */
+  let savedScroll = 0;
+  const isOpen = () => nav.classList.contains("open");
+
+  const openMenu = () => {
+    savedScroll = window.scrollY || window.pageYOffset || 0;
+    nav.classList.add("open");
+    document.body.classList.add("menu-open");
+    document.body.style.top = `-${savedScroll}px`;
+    toggle.setAttribute("aria-expanded", "true");
+  };
+
+  // restore=true returns the reader to where they were (X / scrim / Esc);
+  // restore=false unlocks without forcing scroll, so an anchor jump can take over.
+  const closeMenu = (restore = true) => {
+    if (!isOpen() && !document.body.classList.contains("menu-open")) return;
     nav.classList.remove("open");
     document.body.classList.remove("menu-open");
+    document.body.style.top = "";
+    if (restore) window.scrollTo(0, savedScroll);
     toggle.setAttribute("aria-expanded", "false");
   };
-  toggle.addEventListener("click", () => {
-    const open = nav.classList.toggle("open");
-    document.body.classList.toggle("menu-open", open);
-    toggle.setAttribute("aria-expanded", String(open));
+
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    isOpen() ? closeMenu() : openMenu();
   });
-  nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+
+  // nav links: close without restoring, then let the in-page anchor scroll run
+  nav.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => closeMenu(false))
+  );
+
+  // tap anywhere outside the panel (incl. the scrim) closes it
+  document.addEventListener("click", (e) => {
+    if (!isOpen()) return;
+    if (nav.contains(e.target) || toggle.contains(e.target)) return;
+    closeMenu();
+  });
+
+  // Escape closes
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && isOpen()) closeMenu();
+  });
+
+  // if the viewport grows past the mobile breakpoint, drop the menu state cleanly
+  const mq = window.matchMedia("(min-width:861px)");
+  const onMq = (e) => {
+    if (e.matches) closeMenu(false);
+  };
+  mq.addEventListener ? mq.addEventListener("change", onMq) : mq.addListener(onMq);
 
   /* --- reveal on scroll --- */
   const reveals = document.querySelectorAll(".reveal");
