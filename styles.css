@@ -307,6 +307,21 @@ body.menu-open{position:fixed;left:0;right:0;width:100%;overflow:hidden}
   .about-cols{grid-template-columns:1fr;gap:20px}
   .foot-grid{grid-template-columns:1fr;gap:26px}
 }
+
+/* ---------- tablet: roomier multi-column content (keeps the hamburger) ---------- */
+@media (min-width:600px) and (max-width:860px){
+  .act{grid-template-columns:1.05fr 1fr;gap:clamp(20px,3.4vw,40px)}
+  .act-rev{direction:rtl}            /* restore alternating image/text */
+  .act-rev>*{direction:ltr}
+  .act-media img{height:clamp(240px,34vw,360px)}
+  .act-title{font-size:clamp(1.7rem,4.4vw,2.4rem)}
+  .video-grid{grid-template-columns:1fr 1fr}
+  .bio-grid{grid-template-columns:repeat(3,1fr);max-width:none}
+  .bio h3{margin-inline:18px;font-size:1.35rem}
+  .bio-role,.bio>p:last-child{margin-inline:18px}
+  .about-cols{grid-template-columns:1fr 1fr;gap:30px;text-align:left}
+  .foot-grid{grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;scroll-behavior:auto}
   .reveal{opacity:1;transform:none}
