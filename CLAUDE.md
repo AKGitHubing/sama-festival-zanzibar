@@ -1,8 +1,12 @@
-# tus-03-sama — SAMĀ Festival Site Rebuild
+﻿# tus-03-sama — SAMĀ Festival Site Rebuild
 
 ## Operating principles
-- Optimize for ROI on Amro's time and cost: cheapest correct path first; flag gold-plating.
-- Value over polish: ship the 80% that matters, name the 20% skipped.
+- Optimize for ROI on Amro's time: efficient path, zero wasted effort — but never trade away
+  delivery quality. The bar is best-in-class, not "good enough".
+- Visual and design quality are first-class requirements: Amro is highly design-driven; polished,
+  visually strong outputs are expected by default, not gold-plating.
+- Communication: pragmatic and multi-perspective, minimal fluff — state the recommendation and the
+  key trade-off, skip the over-explanation.
 - Reuse before build; automate anything done twice; outputs must be skimmable.
 - Naming: kebab-case, ISO dates (YYYY-MM-DD), filenames <=60 chars, no spaces in new folder names.
 - Standard subfolders when adding structure: src, scripts, docs, data, out, arc, tmp, sched, media, pub.
